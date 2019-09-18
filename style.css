@@ -1,0 +1,171 @@
+@font-face {
+    font-family: OpenSans-Bold;
+    src: url(OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: OpenSans-Regular;
+    src: url(OpenSans-Regular.ttf);
+}
+
+* {
+    /* regel om de basis regels uit te zetten */
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+}
+
+nav {
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column;
+    display: flex;
+    background-color: #21CBBA;
+    height: 7vh;
+}
+
+nav ul {
+    list-style-type: none;
+    display: none;
+    /*    margin-top: 7vh;*/
+    z-index: 2;
+    height: 1200px;
+    background-color: green;
+}
+
+img.logo {
+    height: 100%;
+    display: inline-block;
+    /*    position: absolute;*/
+}
+
+li {
+    font-family: OpenSans-Bold;
+    text-decoration: none;
+    padding: 12px 30px;
+    background-color: #21CBBA;
+    text-align: center;
+    transition: 0.7s;
+    width: 85vw;
+}
+
+li a {
+    text-decoration: none;
+    color: white;
+}
+
+li:hover {
+    background-color: #1DBCAC;
+    transition: 0.7s;
+}
+
+li.overiglink {
+    background-color: #FF0066;
+}
+
+li.overiglink:hover {
+    background-color: #E2075F;
+}
+
+
+li:last-child {
+    padding-bottom: 50vh;
+} 
+
+.hamburger {
+    height: auto;
+    width: auto;
+    /*    display: none;*/
+    cursor: pointer;
+    align-items: flex-end;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.hamburger div {
+    width: 22px;
+    height: 3px;
+    margin: 5px;
+    background-color: white;
+}
+
+.rowin {
+    display: block;
+    transition: 0.7s;
+    opacity: 1;
+}
+
+section.background {
+    width: 100vw;
+    height: 100vh;
+/*    background-color: red;*/
+    background-image: url(./image/backtruck.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/*----------------------*/
+
+h1 {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-family: OpenSans-Bold;
+}
+
+p {
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-family: OpenSans-Regular;
+}
+
+/*-----------------*/
+
+section {
+    /*    background-color: green;*/
+}
+
+.arroundsection {
+    border: #A8A8A8 solid 2px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
+@media all and (min-width: 800px) {
+
+    nav {
+        flex-wrap: wrap;
+        /*werkt nog niet*/
+    }
+
+    nav ul {
+        list-style-type: none;
+        display: flex;
+    }
+
+    li {
+        width: auto;
+    }
+
+    li.desktopnav {
+        display: none;
+    }
+
+    li.overiglink {
+        display: none;
+    }
+
+    .hamburger {
+/*        display: none;*/
+    }
+
+}
