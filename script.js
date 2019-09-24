@@ -5,7 +5,7 @@
 /*eslint 'no-console': 0*/
 
 function hamburger() {
-    document.querySelector("nav ul") .classList.toggle("rowin");
+    document.querySelector("nav ul") .classList.toggle("popnav");
 }
 
 document.querySelector(".hamburger").addEventListener("click", hamburger);

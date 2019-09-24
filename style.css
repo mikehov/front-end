@@ -20,6 +20,33 @@ body {
     min-height: 100vh;
 }
 
+/* Fonts ----------------------*/
+
+h1 {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-family: OpenSans-Bold, serif;
+}
+
+h2 {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-family: OpenSans-Bold, serif;
+}
+
+p {
+    margin-left: 20px;
+    margin-top: 0px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    font-family: OpenSans-Regular, serif;
+}
+
+/* Navigatie -----------------*/
+
 nav {
     justify-content: space-between;
     align-items: flex-start;
@@ -45,13 +72,13 @@ img.logo {
 }
 
 li {
-    font-family: OpenSans-Bold;
+    font-family: OpenSans-Bold, serif;
     text-decoration: none;
     padding: 12px 30px;
     background-color: #21CBBA;
     text-align: center;
     transition: 0.7s;
-    width: 85vw;
+    width: 90vw;
 }
 
 li a {
@@ -72,15 +99,9 @@ li.overiglink:hover {
     background-color: #E2075F;
 }
 
-
-li:last-child {
-    padding-bottom: 50vh;
-} 
-
 .hamburger {
     height: auto;
     width: auto;
-    /*    display: none;*/
     cursor: pointer;
     align-items: flex-end;
     position: absolute;
@@ -95,52 +116,88 @@ li:last-child {
     background-color: white;
 }
 
-.rowin {
+.popnav {
     display: block;
     transition: 0.7s;
     opacity: 1;
 }
 
-section.background {
-    width: 100vw;
-    height: 100vh;
+.itemimg {
 /*    background-color: red;*/
-    background-image: url(./image/backtruck.png);
-    background-size: cover;
-    background-repeat: no-repeat;
+    width: 35%;
+    height: auto;
+    float: left;
 }
 
-/*----------------------*/
-
-h1 {
-    margin-left: 20px;
-    margin-top: 20px;
-    margin-right: 20px;
-    font-family: OpenSans-Bold;
+.itemtekst {
+/*    background-color: green;*/
+    width: 65%;
+    height: auto;
+    float: left;
 }
 
-p {
-    margin-left: 20px;
-    margin-top: 0px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-    font-family: OpenSans-Regular;
-}
 
-/*-----------------*/
+/* Sections -------------------*/
 
 section {
     /*    background-color: green;*/
 }
 
-.arroundsection {
+section.firstcontent {
+    margin: 0 auto;
+    max-width: 40em;
+}
+
+/* Border om de section heen */
+section .arroundsection {
     border: #A8A8A8 solid 2px;
     margin-left: 20px;
     margin-top: 20px;
     margin-right: 20px;
 }
 
-@media all and (min-width: 800px) {
+/* Achtergrond van je scherm */
+section.background {
+    width: 100vw;
+    height: 100vh;
+    /*    background-color: red;*/
+    background-image: url(./image/backtruck.png);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section.overzicht {
+    width: 100%;
+    height: auto;
+}
+
+section.overzicht h2 {
+    text-transform: uppercase;
+}
+
+section .overzichtsitem { /*---Dit is 1 item---*/
+    border: #21CBBA solid 2px;
+    margin: 0px 20px 0px 20px;
+    max-width: 40em;
+    display: flex;
+}
+
+section.overzicht img {
+    width: 100%;
+    height: auto;
+    display: inline;
+}
+
+section.overzicht p {
+    margin-top: 10px;    
+}
+
+
+/* Media query's ------------------------------------------------------*/
+
+
+@media all and (min-width: 600px) {
 
     nav {
         flex-wrap: wrap;
@@ -163,9 +220,4 @@ section {
     li.overiglink {
         display: none;
     }
-
-    .hamburger {
-/*        display: none;*/
-    }
-
 }

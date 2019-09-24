@@ -5,19 +5,19 @@
     <meta charset="UTF-8">
     <title>Flexbox Navigation | Mike Hovenier</title>
 
-    <head>
-        <link rel="stylesheet" href="style.css" />
-        <!--    <link rel="shortcut icon" type="image/x-icon" href="./images/iconmh.png" />-->
-        <meta name="author" content="Mike Hovenier">
-        <meta name="keywords" content="Mike Hovenier">
-        <!--        <meta name= viewport content= width=device-width initial-scale=1.0>-->
-    </head>
+    <link rel="stylesheet" href="style.css" />
+    <!--    <link rel="shortcut icon" type="image/x-icon" href="./images/iconmh.png" />-->
+    <meta name="author" content="Mike Hovenier">
+    <meta name="keywords" content="Mike Hovenier">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
     <header>
         <section class="background">
+            <!-- De Volledige scherm -->
             <nav>
+                <!-- De navigatie -->
                 <img class="logo" src="./image/logo.png" alt="Logo">
                 <div class="hamburger">
                     <div class="line"></div>
@@ -25,7 +25,6 @@
                     <div class="line"></div>
                 </div>
                 <ul>
-                    <!--                <li><img src="./image/profile.png" alt="Profile"></li>-->
                     <li><a href="#">Foodtrucks Huren</a></li>
                     <li><a href="#">Lijst met Foodtrucks</a></li>
                     <li><a href="#">Foodtruck Aanvragen Bekijken</a></li>
@@ -35,27 +34,53 @@
                     <li class="overiglink"><a href="#">Uitloggen</a></li>
                 </ul>
             </nav>
-<!--            <h2>dfksjfdklsfjldsfjkldsfjkldsfs</h2>-->
         </section>
     </header>
 
-    <section>
-        <div class="arroundsection">
-            <h1>Test titel</h1>
-            <p>Dit is wat tekst om te testen kijken hoe het er ongeveer uit ziet. Geen idee wat ik moet typen dus typ maar wat.</p>
-        </div>
-    </section>
-    
-    <section>
-        <div class="arroundsection">
-            <h1>Test titel</h1>
-            <p>Dit is wat tekst om te testen kijken hoe het er ongeveer uit ziet. Geen idee wat ik moet typen dus typ maar wat.</p>
-        </div>
-    </section>
+    <main>
+        <section class="overzicht">
+            <h1>Voorgestelde Foodtrucks</h1>
+            <p>Best beoordeelde Foodtrucks</p>
+
+            <section>
+                <h2>Food your life</h2>
+                <div class="overzichtsitem">
+                    <div class="itemimg">
+                        <a href="detail-foodyourlife.html"><img src="./image/foodyourlife.png" alt="Foor your life"></a>
+                    </div>
+                    <div class="itemtekst">
+                        <p>Wij zijn in januari 2016 gestart met onze Peugeot J7 uit 1974 die wij hebben om laten bouwen tot…</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Het broertje</h2>
+                <div class="overzichtsitem">
+                    <div class="itemimg">
+                        <a href="detail-foodyourlife.html"><img src="./image/hetbroertje.png" alt="Het broertje"></a>
+                    </div>
+                    <div class="itemtekst">
+                        <p>Wij zijn in januari 2016 gestart met onze Peugeot J7 uit 1974 die wij hebben om laten bouwen tot…</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Fruitcocktail on tour</h2>
+                <div class="overzichtsitem">
+                    <div class="itemimg">
+                        <a href="detail-foodyourlife.html"><img src="./image/fruitcocktail.png" alt="Fruitcocktail on tour"></a>
+                    </div>
+                    <div class="itemtekst">
+                        <p>Wij zijn in januari 2016 gestart met onze Peugeot J7 uit 1974 die wij hebben om laten bouwen tot…</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
 
     <footer>
-        <!--    Bronnen: https://codepen.io/samnorton/pen/zBYMJG
-        https://www.youtube.com/watch?v=RKL9Nkf1_N8-->
     </footer>
     <script src="./script.js"></script>
 </body>
