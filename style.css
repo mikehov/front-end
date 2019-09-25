@@ -36,6 +36,13 @@ h2 {
     font-family: OpenSans-Bold, serif;
 }
 
+h3 {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-family: OpenSans-Bold, serif;
+}
+
 p {
     margin-left: 20px;
     margin-top: 0px;
@@ -191,6 +198,14 @@ section.overzicht img {
 
 section.overzicht p {
     margin-top: 10px;    
+}
+
+section.detailpage {
+    max-width: 40em;
+}
+
+section.detailpage p {
+    color: #1DBCAC;
 }
 
 
