@@ -5,14 +5,11 @@
 /*eslint 'no-console': 0*/
 
 function hamburger() {
-    document.querySelector("nav ul") .classList.toggle("popnav");
+    document.querySelector("nav ul").classList.toggle("popnav");
     console.log('Navigatie klik');
 }
 
 document.querySelector(".hamburger").addEventListener("click", hamburger);
-
-
-
 
 
 console.log('Script werkt');

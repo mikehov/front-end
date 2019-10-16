@@ -6,6 +6,7 @@
 
 /*--------fonts-------*/
 
+/*
 @font-face {
     font-family: OpenSans-Bold;
     src: url(OpenSans-Bold.ttf);
@@ -15,6 +16,7 @@
     font-family: OpenSans-Regular;
     src: url(OpenSans-Regular.ttf);
 }
+*/
 
 
 /*--------basis-------*/
@@ -27,6 +29,46 @@ body {
     background-size: cover;
 }
 
+main {
+    padding-top: 3em;
+}
+
+
+/*--------headings-------*/
+
+h1,
+h2,
+h3,
+p,
+a {
+    font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+}
+
+h2 {
+    color: #333333;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+h3 {
+    color: white;
+    font-weight: 200;
+}
+
+p {
+    color: black;
+    font-weight: 100;
+}
+
+a {
+    text-decoration: none;
+    font-weight: 100;
+}
 
 /*--------nav-------*/
 
@@ -43,39 +85,47 @@ nav {
     background-color: #21CBBA;
     list-style-type: none;
     margin-bottom: 20px;
-    transition: all ease-in .25s;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
 
     font-family: sans-serif;
 }
 
-h2 {
-    color: #333333;
-    text-transform: uppercase;
-    font-family: sans-serif;
-}
-
-/*--FLEX WEGHALEN--*/
 ul {
-    z-index: 2;
+    z-index: 9;
+    position: fixed;
+    right: 0;
     width: 90vw;
-    display: none;
-    transition: 0.7s;
     list-style-type: none;
+    top: 3em;
 }
 
 li {
     padding: 20px;
-    background-color: #21CBBA;
-    transition: 0.3s;
+    background-color: #1fc2b2;
+    transition: 0.15s;
+    width: 90vw;
 }
 
-li:first-child {
-    margin-top: 3em;
+nav ul {
+    transform: translateX(100%);
+    transition: 0.7s;
 }
 
-li:hover, li:focus {
+li:hover,
+li:focus-within {
     background-color: #1EBCAC;
     font-size: 1.1em;
+}
+
+li.listred {
+    background-color: #EF0562;
+}
+
+li.listred:hover {
+    background-color: #e3055e;
 }
 
 nav ul li a {
@@ -87,24 +137,31 @@ nav .hamburger {
     height: auto;
     width: auto;
     cursor: pointer;
-    align-items: flex-end;
     position: absolute;
     top: 10px;
     right: 15px;
 }
 
-.hamburger div {
+nav .hamburger {
+    transform: rotate(360deg);
+}
+
+nav .hamburger div {
     width: 22px;
     height: 3px;
     margin: 5px;
     background-color: white;
 }
 
-ul.popnav {
-    display: block;
-    transition: 0.7s;
+.popnav {
+    transform: translateX(0%);
+
 }
 
+nav img {
+    height: 3em;
+    position: fixed;
+}
 
 /*--------foodtrucklijst-------*/
 
@@ -133,56 +190,129 @@ section.foodtrucklijst .content {
     border: 2px solid #A8A8A8;
     margin: 5px;
     display: flex;
-    transition: all ease-in 0.5s;
     margin-bottom: 20px;
+    position: relative;
 
-    transition: all ease-in .25s;
-}
-
-section.foodtrucklijst .content p {
-    transition: all ease-in .25s;
+    transition: all ease-in .15s;
 }
 
 section.foodtrucklijst .content:hover {
     background-color: #21CBBA;
-    transform: scale(1.025);
+    transform: translateY(5px);
 }
 
-section.foodtrucklijst .content p:hover {
+section.foodtrucklijst .content:hover p {
     color: white;
-}
-
-section.tekstfoodtruck {
-    width: 60%;
-}
-
-section.foodtrucklijst section img {
-    width: 40%;
 }
 
 section.foodtrucklijst h2 {
     margin-bottom: -5px;
 }
 
-section.foodtrucklijst p {
+section.foodtrucklijst .content p {
+    margin-bottom: 20px;
     margin-left: 10px;
     margin-top: 10px;
     margin-right: 10px;
+
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 7;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    transition: all ease-in .25s;
+}
+
+section .tekstfoodtruck img {
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+.foodicons img {
+    width: 1.7em;
+}
+
+.staricons img {
+    width: 1.2em;
+}
+
+section.content img.thumbnail {
+    width: 40%;
+}
+
+section.content .foodicons,
+section.content .staricons {
+    margin-left: 10px;
+}
+
+section.content h3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 5px;
+    background-color: #21CBBA;
+}
+
+/*--Button--*/
+section.popup {
+    width: 100%;
+    height: auto;    
+}
+
+section.popup button  {
+    font-family: 'Open Sans', sans-serif;
+    margin-left: 2em;
+    margin-top: 2em;
+    font-size: 1.2em;
+    padding: 10px 15px;
+    background-color: #21CBBA;
+    color: white;
+}
+
+
+/*--Detail html--*/
+
+section.foodtruck img {
+    width: 100vw;
+    height: 10em;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+section.foodtruck h2 {
+    position: fixed;
+    width: 500px;
+    height: 200px;
+    color: white;
+    margin: 0 auto;
+}
+
+section.foodtruckkort {
+    width: 100vw;
+/*    height: 10em;*/
+    background-color: #21CBBA;
+}
+
+section.foodtruckkort .foodicons img {
+    width: 50px;
+    height: auto;
+}
+
+section.foodtruckkort .staricons img {
+    width: 50px;
+    height: auto;
 }
 
 
 @media all and (min-width: 600px) {
 
-    /*
-    nav .hamburger {
-        display: none;
-    }*/
-    
     ul {
         width: 20em;
         margin-left: 2em;
+    }
+
+    li {
+        text-align: left;
     }
