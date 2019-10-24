@@ -12,5 +12,8 @@ https://stackoverflow.com/questions/36652580/how-to-add-three-dots-to-text-when-
 form.guide (?) How to use the HTML5 range input type. Geraadpleegd op 24 oktober 2019, van
 http://form.guide/html-form/html5-input-type-range.html
 
+CSS Portal (?) Style Input Range. Geraadpleegd op 24 oktober 2019, van
+https://www.cssportal.com/style-input-range/
+
 
 Ik heb af en toe wat hulp gekregen door mede-studenten Sam de Kanter en Rowin Ruizendaal.
