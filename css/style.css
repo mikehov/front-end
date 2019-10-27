@@ -39,6 +39,7 @@ main {
 h1,
 h2,
 h3,
+h4,
 p,
 a {
     font-family: 'Open Sans', sans-serif;
@@ -69,6 +70,8 @@ a {
     text-decoration: none;
     font-weight: 100;
 }
+
+
 
 /*--------nav-------*/
 
@@ -118,6 +121,7 @@ li:hover,
 li:focus-within {
     background-color: #1EBCAC;
     font-size: 1.1em;
+    outline: none;
 }
 
 li.listred {
@@ -158,12 +162,24 @@ nav .hamburger div {
 
 }
 
-nav img {
+nav a img {
     height: 3em;
     position: fixed;
+    top: 0;
 }
 
+
 /*--------foodtrucklijst-------*/
+
+main h1 {
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    color: #21CBBA;
+    z-index: 1;
+    max-width: 100vw;
+    margin-top: 0.5em;
+}
 
 /*--De container van de blokken--*/
 section.foodtrucklijst {
@@ -196,9 +212,26 @@ section.foodtrucklijst .content {
     transition: all ease-in .15s;
 }
 
-section.foodtrucklijst .content:hover {
+section.foodtrucklijst .content:hover,
+section.foodtrucklijst .content:focus-within {
     background-color: #21CBBA;
     transform: translateY(5px);
+}
+
+article {
+    transition: 0.3s;
+}
+
+article:first-child {
+    margin-top: 1em;
+}
+
+article:focus-within {
+    transform: translateY(5px);
+}
+
+article a:visited {
+    outline: #FF0066 solid 2px;
 }
 
 section.foodtrucklijst .content:hover p {
@@ -245,7 +278,7 @@ section.content .staricons {
     margin-left: 10px;
 }
 
-section.content h3 {
+h3.cijfer {
     position: absolute;
     top: 0;
     left: 0;
@@ -253,20 +286,143 @@ section.content h3 {
     background-color: #21CBBA;
 }
 
+
+
 /*--Button--*/
-section.popup {
-    width: 100%;
-    height: auto;    
+button:focus-within {
+    outline: #FF0066 solid 2px;
 }
 
-section.popup button  {
+section.filterknop {
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 10;
+}
+
+section.filterknop button#filterknop {
     font-family: 'Open Sans', sans-serif;
     margin-left: 2em;
     margin-top: 2em;
-    font-size: 1.2em;
+    font-size: 0.8em;
     padding: 10px 15px;
     background-color: #21CBBA;
     color: white;
+    transition: 0.3s;
+}
+
+section.filterknop button:hover,
+section.filterknop button:focus-within {
+    background-color: #1fc2b2;
+}
+
+.filter {
+    max-width: 90vw;
+    margin-left: 1.6em;
+    margin-right: 1.6em;
+    height: auto;
+    padding: 20px;
+    background-color: #1fc2b2;
+    display: none;
+}
+
+.filteractive {
+    display: block;
+}
+
+
+
+/*--Form--*/
+
+label {
+    color: white;
+    font-weight: 700;
+    display: block;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+    /*    text-transform: uppercase;*/
+}
+
+legend {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    font-size: 1.2em;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 20px;
+}
+
+fieldset {
+    margin-bottom: 40px;
+}
+
+fieldset.filtergerechten label {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+input {
+    display: block;
+}
+
+input:focus-within {
+    outline: #FF0066 solid 2px;
+}
+
+/*--Input range--*/
+
+input[type=range] {
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #fafafa;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    box-shadow: 1px 1px 1px #50555C;
+    background-color: white;
+    height: 1.5em;
+    /*  background-color: #EF0562;*/
+    border-radius: 30px;
+    border: 0px solid #000000;
+}
+
+output#rating_disp {
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+}
+
+input#searchbar {
+    font-size: 0.8em;
+    padding: 10px 15px;
+    display: inline-block;
+    width: auto;
+    box-sizing: border-box;
+}
+
+button#searchbarbutton {
+    padding: 10px;
+    background: #FF0066;
+    color: white;
+    font-size: 0.8em;
+    position: absolute;
+    float: right;
+}
+
+button#filterknopaccept {
+    padding: 10px;
+    background: #FF0066;
+    color: white;
+    font-size: 0.8em;
 }
 
 
@@ -275,36 +431,128 @@ section.popup button  {
 section.foodtruck img {
     width: 100vw;
     height: 10em;
+
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     object-fit: cover;
 }
 
+h2.titelfoodtruck {
+    text-align: center;
+    background-color: #1EBCAC;
+    color: white;
+}
+
+/*
+
 section.foodtruck h2 {
     position: fixed;
-    width: 500px;
-    height: 200px;
     color: white;
     margin: 0 auto;
+}
+*/
+
+section.foodtruck h3 {
+    color: black;
+    padding: 10px;
+    border: solid 1px #CBCBCB;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+section.foodtruck h4 {
+    margin-top: 20px;
 }
 
 section.foodtruckkort {
     width: 100vw;
-/*    height: 10em;*/
+    /*    height: 10em;*/
     background-color: #21CBBA;
+    margin-top: -5px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+section.foodtruckkort p {
+    color: white;
 }
 
 section.foodtruckkort .foodicons img {
-    width: 50px;
+    width: 1.7em;
     height: auto;
 }
 
 section.foodtruckkort .staricons img {
-    width: 50px;
+    width: 1.2em;
     height: auto;
 }
 
+section.foodtruckinformatie {
+    padding: 15px;
+}
+
+table h3 {
+    padding: 15px;
+    color: black;
+    display: block;
+    border: solid black 1px;
+    text-transform: uppercase;
+}
+
+section.foodtruckinformatie {
+    color: black;
+}
+
+table p {
+    color: black;
+}
+
+table {
+    padding: 15px;
+}
+
+tr,
+th,
+td {
+    font-family: 'Open Sans', sans-serif;
+    text-align: left;
+    display: block;
+}
+
+main {
+    -webkit-animation: main 1s;
+    animation: main 1.5s;
+}
+
+@keyframes main {
+    from {
+        animation-delay: 1s;
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*--FOOTER--*/
+
+footer {
+    background-color: #1fc2b2;
+    color: white;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
+
+
+
+/*--Media Query's--*/
 
 @media all and (min-width: 600px) {
 

@@ -9,6 +9,7 @@
     <!--    <link rel="shortcut icon" type="image/x-icon" href="./images/iconmh.png" />-->
     <meta name="author" content="Mike Hovenier">
     <meta name="keywords" content="Mike Hovenier">
+    <meta name="description" content="Een foodtruck website waar je foodtrucks kan huren of je eigen foodtruck verhuren.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap" rel="stylesheet">
 </head>
@@ -17,14 +18,14 @@
 
     <header>
         <nav>
-           <button>
+            <button>
                 <div class="hamburger">
                     <div class="line"></div>
                     <div class="line"></div>
                     <div class="line"></div>
                 </div>
             </button>
-            <img src="./img/logo.png" alt="Logo Foodtruckbooking.com">
+            <a href="index.html"><img src="./img/logo.png" alt="Logo Foodtruckbooking.com"></a>
             <ul>
                 <li><a href="#">Foodtrucks Huren</a></li>
                 <li><a href="#">Lijst met Foodtrucks</a></li>
@@ -36,48 +37,94 @@
             </ul>
         </nav>
     </header>
+
     <main>
-        <section class="popup">
-            <button>Filter</button>
-        </section>       
+        <section class="filterknop">
+            <button id="filterknop">Filter</button>
+            <section class="filter">
+                <form action="#" method="post">
+                    <fieldset>
+                        <legend>Foodtrucks Filteren:</legend>
+                        <label for="searchbar">Foodtruck naam:</label>
+                        <input type="text" name="foodtrucknaam" id="searchbar" placeholder="Foodtruck, gerechten, type...">
+                        <button type="submit" id="searchbarbutton">Zoeken</button>
+                    </fieldset>
+
+                    <fieldset class="filtergerechten">
+                        <legend>Gerechten kiezen:</legend>
+                        <label for="amerikaans">Amerikaans:
+                            <input type="checkbox" id="amerikaans" name="amerikaans" value="amerikaans">
+                        </label>
+
+                        <label for="chinees">Chinees:
+                            <input type="checkbox" id="chinees" name="plain" value="chinees">
+                        </label>
+
+                        <label for="frans">Frans:
+                            <input type="checkbox" id="frans" name="plain" value="frans">
+                        </label>
+
+                        <label for="Indonesisch">Indonesisch:
+                            <input type="checkbox" id="Indonesisch" name="plain" value="indonesisch">
+                        </label>
+
+                        <label for="italiaans">Italiaans:
+                            <input type="checkbox" id="italiaans" name="plain" value="italiaans">
+                        </label>
+
+                        <label for="mexicaans">Mexicaans:
+                            <input type="checkbox" id="mexicaans" name="plain" value="mexicaans">
+                        </label>
+                    </fieldset>
+
+
+                    <input type="range" name="rating" value="1" min="1" max="10" oninput="rating_disp.value = rating.value">
+                    <output id="rating_disp">Sterren rating</output>
+
+                    <button type="submit" id="filterknopaccept">Zoeken</button>
+
+                </form>
+            </section>
+        </section>
+        <h1>Lijst met alle Foodtrucks</h1>
         <section class="foodtrucklijst">
-            <section>
+            <article>
                 <h2>Monster lekker</h2>
                 <a href="detail.html">
                     <section class="content">
-                        <h3>9,8</h3>
-                        <img class="thumbnail" src="./img/foodtruck1.png" alt="Foodtruck">
+                        <h3 class="cijfer">9,8</h3>
+                        <img class="thumbnail" src="./img/foodtruck1.png" alt="Foodtruck monsterlekker afbeelding">
                         <div class="tekstfoodtruck">
                             <p>Wij verkopen extreem lekkere grote monster burgers, wij stellen ons op voor verschillende activiteiten. Zoals: festivals, werkterein.</p>
                             <div class="foodicons">
-                                <img src="./img/icon1.png" alt="Food">
-                                <img src="./img/icon2.png" alt="Food">
-                                <img src="./img/icon3.png" alt="Food">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
                             </div>
                             <div class="staricons">
-                                <img src="./svg/star.svg" alt="Food">
-                                <img src="./svg/star.svg" alt="Food">
-                                <img src="./svg/star.svg" alt="Food">
-                                <img src="./svg/star.svg" alt="Food">
-                                <img src="./svg/halfstar.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="1">
+                                <img src="./svg/star.svg" alt="2">
+                                <img src="./svg/star.svg" alt="3">
+                                <img src="./svg/star.svg" alt="4">
+                                <img src="./svg/halfstar.svg" alt="4 en een halve ster">
                             </div>
                         </div>
                     </section>
                 </a>
-            </section>
+            </article>
 
-            <section>
+            <article>
                 <h2>Het zusje</h2>
                 <a href="detail.html">
                     <section class="content">
-                        <h3>7,7</h3>
-                        <img class="thumbnail" src="./img/foodtruck2.png" alt="Foodtruck">
+                        <h3 class="cijfer">7,7</h3>
+                        <img class="thumbnail" src="./img/foodtruck2.png" alt="Foodtruck Het zusje afbeelding">
                         <div class="tekstfoodtruck">
                             <p>Hmmmm een lekker drankje, dat kan er bij ons wel in. Wij verkopen heerlijke fruitig frisse drankjes om van te genieten.</p>
                             <div class="foodicons">
-                                <img src="./img/icon1.png" alt="Food">
-                                <img src="./img/icon2.png" alt="Food">
-                                <img src="./img/icon3.png" alt="Food">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
                             </div>
                             <div class="staricons">
                                 <img src="./svg/star.svg" alt="Food">
@@ -88,20 +135,20 @@
                         </div>
                     </section>
                 </a>
-            </section>
+            </article>
 
-            <section>
+            <article>
                 <h2>Fruitcocktail whips</h2>
                 <a href="detail.html">
                     <section class="content">
-                        <h3>8,2</h3>
-                        <img class="thumbnail" src="./img/foodtruck4.png" alt="Foodtruck">
+                        <h3 class="cijfer">8,2</h3>
+                        <img class="thumbnail" src="./img/foodtruck4.png" alt="Foodtruck Fruitcoctail whips afbeelding">
                         <div class="tekstfoodtruck">
                             <p>Iedereen heeft toch zin in een lekkere cocktail op z'n feestje, anders wij wel. Wij helpen u graag met aanbieden van cocktails tijdens een feestje.</p>
                             <div class="foodicons">
-                                <img src="./img/icon1.png" alt="Food">
-                                <img src="./img/icon2.png" alt="Food">
-                                <img src="./img/icon3.png" alt="Food">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
                             </div>
                             <div class="staricons">
                                 <img src="./svg/star.svg" alt="Food">
@@ -113,44 +160,44 @@
                         </div>
                     </section>
                 </a>
-            </section>
+            </article>
 
-            <section>
+            <article>
                 <h2>Geitjespaleis</h2>
                 <a href="detail.html">
                     <section class="content">
-                        <h3>7,1</h3>
-                        <img class="thumbnail" src="./img/foodtruck3.png" alt="Foodtruck">
+                        <h3 class="cijfer">7,1</h3>
+                        <img class="thumbnail" src="./img/foodtruck3.png" alt="Foodtruck Geitjespaleis afbeelding">
                         <div class="tekstfoodtruck">
                             <p>Zin in een geitje, dat doen we niet! Wij verkopen hamburgers, hotdogs en andere vleesproduct die niet gemaakt zijn van geitjes.</p>
                             <div class="foodicons">
-                                <img src="./img/icon1.png" alt="Food">
-                                <img src="./img/icon2.png" alt="Food">
-                                <img src="./img/icon3.png" alt="Food">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
                             </div>
                             <div class="staricons">
-                                <img src="./svg/star.svg" alt="Food">
-                                <img src="./svg/star.svg" alt="Food">
-                                <img src="./svg/star.svg" alt="Food">
-                                <img src="./svg/halfstar.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="1">
+                                <img src="./svg/star.svg" alt="2">
+                                <img src="./svg/star.svg" alt="3">
+                                <img src="./svg/halfstar.svg" alt="3 en een halve ster">
                             </div>
                         </div>
                     </section>
                 </a>
-            </section>
+            </article>
 
-            <section>
+            <article>
                 <h2>Foody food good</h2>
                 <a href="detail.html">
                     <section class="content">
-                        <h3>7,9</h3>
-                        <img class="thumbnail" src="./img/foodtruck5.png" alt="Foodtruck">
+                        <h3 class="cijfer">7,9</h3>
+                        <img class="thumbnail" src="./img/foodtruck5.png" alt="Foodtruck Foody food good afbeelding">
                         <div class="tekstfoodtruck">
                             <p>Zin in good food, dat ben je bij ons bij het juiste adres. Wij verkopen heerlijke tappas en andere heerlijke buitenlandse gerechten.</p>
                             <div class="foodicons">
-                                <img src="./img/icon1.png" alt="Food">
-                                <img src="./img/icon2.png" alt="Food">
-                                <img src="./img/icon3.png" alt="Food">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
                             </div>
                             <div class="staricons">
                                 <img src="./svg/star.svg" alt="Food">
@@ -161,20 +208,20 @@
                         </div>
                     </section>
                 </a>
-            </section>
+            </article>
 
-            <section>
+            <article>
                 <h2>Sam's foodtruck</h2>
                 <a href="detail.html">
                     <section class="content">
-                        <h3>6,9</h3>
-                        <img class="thumbnail" src="./img/foodtruck6.png" alt="Foodtruck">
+                        <h3 class="cijfer">6,9</h3>
+                        <img class="thumbnail" src="./img/foodtruck6.png" alt="Foodtruck Sam's foodtruck afbeelding">
                         <div class="tekstfoodtruck">
                             <p>Hallo, wij zijn Sam's Foodtruck, wij specialiseren ons in hamburgers, hotdogs en lekkere warme soepjes. Wij zijn vooral beschikbaar voor festivals en feestjes.</p>
                             <div class="foodicons">
-                                <img src="./img/icon1.png" alt="Food">
-                                <img src="./img/icon2.png" alt="Food">
-                                <img src="./img/icon3.png" alt="Food">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
                             </div>
                             <div class="staricons">
                                 <img src="./svg/star.svg" alt="Food">
@@ -184,12 +231,159 @@
                         </div>
                     </section>
                 </a>
-            </section>
+            </article>
+
+            <article>
+                <h2>Monster lekker</h2>
+                <a href="detail.html">
+                    <section class="content">
+                        <h3 class="cijfer">9,8</h3>
+                        <img class="thumbnail" src="./img/foodtruck1.png" alt="Foodtruck monsterlekker afbeelding">
+                        <div class="tekstfoodtruck">
+                            <p>Wij verkopen extreem lekkere grote monster burgers, wij stellen ons op voor verschillende activiteiten. Zoals: festivals, werkterein.</p>
+                            <div class="foodicons">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
+                            </div>
+                            <div class="staricons">
+                                <img src="./svg/star.svg" alt="1">
+                                <img src="./svg/star.svg" alt="2">
+                                <img src="./svg/star.svg" alt="3">
+                                <img src="./svg/star.svg" alt="4">
+                                <img src="./svg/halfstar.svg" alt="4 en een halve ster">
+                            </div>
+                        </div>
+                    </section>
+                </a>
+            </article>
+
+            <article>
+                <h2>Het zusje</h2>
+                <a href="detail.html">
+                    <section class="content">
+                        <h3 class="cijfer">7,7</h3>
+                        <img class="thumbnail" src="./img/foodtruck2.png" alt="Foodtruck het zusje afbeelding">
+                        <div class="tekstfoodtruck">
+                            <p>Hmmmm een lekker drankje, dat kan er bij ons wel in. Wij verkopen heerlijke fruitig frisse drankjes om van te genieten.</p>
+                            <div class="foodicons">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
+                            </div>
+                            <div class="staricons">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                            </div>
+                        </div>
+                    </section>
+                </a>
+            </article>
+
+            <article>
+                <h2>Fruitcocktail whips</h2>
+                <a href="detail.html">
+                    <section class="content">
+                        <h3 class="cijfer">8,2</h3>
+                        <img class="thumbnail" src="./img/foodtruck4.png" alt="Foodtruck fruitcoctail whips afbeelding">
+                        <div class="tekstfoodtruck">
+                            <p>Iedereen heeft toch zin in een lekkere cocktail op z'n feestje, anders wij wel. Wij helpen u graag met aanbieden van cocktails tijdens een feestje.</p>
+                            <div class="foodicons">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
+                            </div>
+                            <div class="staricons">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/halfstar.svg" alt="Food">
+                            </div>
+                        </div>
+                    </section>
+                </a>
+            </article>
+
+            <article>
+                <h2>Geitjespaleis</h2>
+                <a href="detail.html">
+                    <section class="content">
+                        <h3 class="cijfer">7,1</h3>
+                        <img class="thumbnail" src="./img/foodtruck3.png" alt="Foodtruck geitjespaleis afbeelding">
+                        <div class="tekstfoodtruck">
+                            <p>Zin in een geitje, dat doen we niet! Wij verkopen hamburgers, hotdogs en andere vleesproduct die niet gemaakt zijn van geitjes.</p>
+                            <div class="foodicons">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
+                            </div>
+                            <div class="staricons">
+                                <img src="./svg/star.svg" alt="1">
+                                <img src="./svg/star.svg" alt="2">
+                                <img src="./svg/star.svg" alt="3">
+                                <img src="./svg/halfstar.svg" alt="3 en een halve ster">
+                            </div>
+                        </div>
+                    </section>
+                </a>
+            </article>
+
+            <article>
+                <h2>Foody food good</h2>
+                <a href="detail.html">
+                    <section class="content">
+                        <h3 class="cijfer">7,9</h3>
+                        <img class="thumbnail" src="./img/foodtruck5.png" alt="Foodtruck foody food good afbeelding">
+                        <div class="tekstfoodtruck">
+                            <p>Zin in good food, dat ben je bij ons bij het juiste adres. Wij verkopen heerlijke tappas en andere heerlijke buitenlandse gerechten.</p>
+                            <div class="foodicons">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
+                            </div>
+                            <div class="staricons">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/halfstar.svg" alt="Food">
+                            </div>
+                        </div>
+                    </section>
+                </a>
+            </article>
+
+            <article>
+                <h2>Sam's foodtruck</h2>
+                <a href="detail.html">
+                    <section class="content">
+                        <h3 class="cijfer">6,9</h3>
+                        <img class="thumbnail" src="./img/foodtruck6.png" alt="Foodtruck Sam's foodtruck afbeelding">
+                        <div class="tekstfoodtruck">
+                            <p>Hallo, wij zijn Sam's Foodtruck, wij specialiseren ons in hamburgers, hotdogs en lekkere warme soepjes. Wij zijn vooral beschikbaar voor festivals en feestjes.</p>
+                            <div class="foodicons">
+                                <img src="./img/icon1.png" alt="Categorie food icoon, soepgerechten">
+                                <img src="./img/icon2.png" alt="Categorie food icoon, warmebroodjes">
+                                <img src="./img/icon3.png" alt="Categorie food icoon, hotdogs">
+                            </div>
+                            <div class="staricons">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                                <img src="./svg/star.svg" alt="Food">
+                            </div>
+                        </div>
+                    </section>
+                </a>
+            </article>
         </section>
+
         <script src="js/script.js"></script>
     </main>
 
     <footer>
+        <p>&copy;opyright: Mike Hovenier</p>
         <!--Copyright: Mike Hovenier-->
     </footer>
 
